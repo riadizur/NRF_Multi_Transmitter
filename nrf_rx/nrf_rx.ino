@@ -116,7 +116,7 @@ void loop(void){
   
    if (dataa[0]=='a'){
     lcd.setCursor(9,0);
-    lcd.print("ON");
+    lcd.print("ON ");
    }
    else if (dataa[0]=='1'){
     lcd.setCursor(9,0);
@@ -124,7 +124,7 @@ void loop(void){
    }
    else if (dataa[1]=='b'){
     lcd.setCursor(9,1);
-    lcd.print("ON");  
+    lcd.print("ON ");  
     }
   else if (dataa[1]=='2'){
     lcd.setCursor(9,1);
@@ -132,7 +132,7 @@ void loop(void){
     }
   else if (dataa[2]=='c'){
     lcd.setCursor(9,2);
-    lcd.print("ON");  
+    lcd.print("ON ");  
     }
   else if (dataa[3]=='3'){
     lcd.setCursor(9,2);
