@@ -17,7 +17,6 @@ struct payload_t {
   unsigned long ms;
   unsigned long counter;
 };
-char data;
 
 void setup(void)
 {
@@ -56,6 +55,7 @@ unsigned long lastTime1, lastTime2, lastTime3;
 void loop(void){
   
   network.update();
+  char data;
   char rx_data=receive_data();
   if(rx_data>0){
     data=rx_data; 
@@ -92,18 +92,24 @@ void loop(void){
   }
   if(data=='a' or data=='1'){
     dataa[0]=data;    
+    lcd.setCursor(13,0);
+    lcd.print("Connect");
   }
   else if (data=='b' or data=='2'){
     dataa[1]=data;
+    lcd.setCursor(13,0);
+    lcd.print("Connect");
   }
   else if (data=='c' or data=='3'){
     dataa[2]=data;
+    lcd.setCursor(13,0);
+    lcd.print("Connect");
   }
   else{
     dataa[0]='0';
     dataa[1]='0';
     dataa[2]='0';
-    Serial.println("Not Connected !");
+    Serial.println("All Transmitter is not Connected !");
   }
   
    if (dataa[0]=='a'){
@@ -133,14 +139,15 @@ void loop(void){
    else{
      //
    }
-  
-  for(int x=0;x<3;x++){
-    if(dataa[x]=='0'){
-      Serial.print("Putus\t");
+  if(!(dataa[0]=='0' and dataa[1]=='0' and dataa[2]=='0')){
+    for(int x=0;x<3;x++){
+      if(dataa[x]=='0'){
+        Serial.print("Putus\t");
+      }
+      else{
+        Serial.print("Connect\t"+String(dataa[0])+"\t");
+      }
     }
-    else{
-      Serial.print(String(dataa[x])+"\t");
-    }
+    Serial.println();
   }
-  Serial.println();
 }
