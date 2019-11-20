@@ -74,20 +74,20 @@ void loop(void){
   else{
     if(millis()-lastTime1>2000){
       dataa[0]='0';
-      lcd.setCursor(13,0);
-      lcd.print("Putus");
+      lcd.setCursor(9,0);
+      lcd.print("    Putus  ");
       lastTime1=millis();
     }
     if(millis()-lastTime2>2000){
       dataa[1]='0';
-      lcd.setCursor(13,1);
-      lcd.print("Putus");
+      lcd.setCursor(9,1);
+      lcd.print("    Putus  ");
       lastTime2=millis();
     }
     if(millis()-lastTime3>2000){
       dataa[2]='0';
-      lcd.setCursor(13,2);
-      lcd.print("Putus");
+      lcd.setCursor(9,2);
+      lcd.print("    Putus  ");
       lastTime3=millis();
     } 
   }
