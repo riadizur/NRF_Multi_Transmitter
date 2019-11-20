@@ -72,19 +72,19 @@ void loop(void){
   }
   else{
     if(millis()-lastTime1>2000){
-      dataa[0]="Not Connected";
+      dataa[0]='0';
       lcd.setCursor(13,0);
       lcd.print("Putus");
       lastTime1=millis();
     }
     if(millis()-lastTime2>2000){
-      dataa[1]="Not Connected";
+      dataa[1]='0';
       lcd.setCursor(13,1);
       lcd.print("Putus");
       lastTime2=millis();
     }
     if(millis()-lastTime3>2000){
-      dataa[2]="Not Connected";
+      dataa[2]='0';
       lcd.setCursor(13,2);
       lcd.print("Putus");
       lastTime3=millis();
@@ -100,37 +100,47 @@ void loop(void){
     dataa[2]=data;
   }
   else{
+    dataa[0]='0';
+    dataa[1]='0';
+    dataa[2]='0';
     Serial.println("Not Connected !");
   }
   
-   if (data=='a'){
+   if (dataa[0]=='a'){
     lcd.setCursor(9,0);
     lcd.print("ON");
    }
-   else if (data=='1'){
+   else if (dataa[0]=='1'){
     lcd.setCursor(9,0);
     lcd.print("OFF");  
    }
-   else if (data=='b'){
+   else if (dataa[1]=='b'){
     lcd.setCursor(9,1);
     lcd.print("ON");  
     }
-  else if (data=='2'){
+  else if (dataa[1]=='2'){
     lcd.setCursor(9,1);
     lcd.print("OFF");  
     }
-  else if (data=='c'){
+  else if (dataa[2]=='c'){
     lcd.setCursor(9,2);
     lcd.print("ON");  
     }
-  else if (data=='3'){
+  else if (dataa[3]=='3'){
     lcd.setCursor(9,2);
     lcd.print("OFF");  
-    }
-    else{}
+   }
+   else{
+     //
+   }
   
   for(int x=0;x<3;x++){
-    Serial.print(String(dataa[x])+"\t");
+    if(dataa[x]=='0'){
+      Serial.print("Putus\t");
+    }
+    else{
+      Serial.print(String(dataa[x])+"\t");
+    }
   }
   Serial.println();
 }
