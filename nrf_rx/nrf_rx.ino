@@ -1,17 +1,16 @@
 #include <RF24Network.h>
 #include <RF24.h>
 #include <SPI.h>
-#include <Wire.h>  // Comes with Arduino IDE
+#include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
 LiquidCrystal_I2C lcd(0x27,2,1,0,4,5,6,7); 
 
-RF24 radio(9,8);                // nRF24L01(+) radio attached using Getting Started board 
+RF24 radio(9,8);
+RF24Network network(radio);
 
-RF24Network network(radio);      // Network uses that radio
-
-const uint16_t this_node = 00;    // Address of our node in Octal format ( 04,031, etc)
-const uint16_t other_node = 01;   // Address of the other node in Octal format
+const uint16_t this_node = 00;    // Alamat Node RX dalam bilangan Octal
+const uint16_t other_node = 01;   // Alamat Node TX dalam bilangan Octal
 
 struct payload_t { 
   unsigned long ms;
