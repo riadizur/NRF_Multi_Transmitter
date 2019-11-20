@@ -134,7 +134,7 @@ void loop(void){
     lcd.setCursor(9,2);
     lcd.print("ON ");  
     }
-  else if (dataa[3]=='3'){
+  else if (dataa[2]=='3'){
     lcd.setCursor(9,2);
     lcd.print("OFF");  
    }
