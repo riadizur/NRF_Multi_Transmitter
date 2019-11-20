@@ -48,6 +48,8 @@ char receive_data(){
   }
 }
 
+void(* resetFunc) (void) = 0;
+
 char dataa[3];
 unsigned long lastTime1, lastTime2, lastTime3;
 
@@ -108,6 +110,7 @@ void loop(void){
     dataa[0]='0';
     dataa[1]='0';
     dataa[2]='0';
+    
     Serial.println("All Transmitter is not Connected !");
   }
   
@@ -148,5 +151,8 @@ void loop(void){
       }
     }
     Serial.println();
+  }
+  else{
+    resetFunc();
   }
 }
