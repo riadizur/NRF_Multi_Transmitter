@@ -110,7 +110,7 @@ void loop(void){
     dataa[0]='0';
     dataa[1]='0';
     dataa[2]='0';
-    
+    resetFunc();
     Serial.println("All Transmitter is not Connected !");
   }
   
@@ -151,8 +151,5 @@ void loop(void){
       }
     }
     Serial.println();
-  }
-  else{
-    resetFunc();
   }
 }
