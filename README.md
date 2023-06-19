@@ -1,5 +1,5 @@
 # NRF_Multi_Transmitter
-
+AUTHOR : Marta Zuriadi a.k.a MZ
 ABOUT THIS PROJECT
 In this tutorial, you will learn about nRF24L01 Arduino interfacing with the help of two examples. In the first example, we will send “Hello world” and a command to blink the LED connected to the other Arduino. In the second example, we will do the bidirectional control and will send the command from First Arduino to blink the LED on the second and then we will send the command from second Arduino to blink the LED on the first.
 Before going in detail, first have a look at the specification of this module
